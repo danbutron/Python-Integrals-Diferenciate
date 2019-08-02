@@ -3,12 +3,12 @@ from sympy import *
 
 init_printing(use_unicode=True)
 x = Symbol('x')
-nombre = input("Nombre de el pdf ")
-nombretex = nombre+'.tex'
-nombreaux=nombre+'.aux'
-nombrelog=nombre+'.log'
+name = input("Name of the pdf file ")
+nametex = name+'.tex'
+nameaux=name+'.aux'
+namelog=name+'.log'
 
-salto='$\\\\$'
+jump='$\\\\$'
 
 header = r'''\documentclass[a4paper]{article}
    \begin{document}
@@ -21,7 +21,7 @@ content = header
 
 def derivacion():
    Sign = '$'
-   func = input("funcion a derivar en terminos de x ")
+   func = input("function to derive in terms x")
    mas= '+'
    C='\\\\'
    equal='='
@@ -31,12 +31,12 @@ def derivacion():
    b= latex(diff(func,x))
    a = a
    b= b 
-   contenido =Sign+a  +equal+ b + C+Sign+salto
+   contenido =Sign+a  +equal+ b + C+Sign+jump
    return contenido
 
 def integracion():
    Sign = '$'
-   func = input("funcion a integrar en terminos de x ")
+   func = input("function to integrate in terms x ")
    mas= '+'
    C='+C\\\\'
    equal='='
@@ -46,31 +46,31 @@ def integracion():
    b= latex(integrate(func,x))
    a = a
    b= b 
-   contenido =Sign+a  +equal+ b + C+Sign+salto
+   contenido =Sign+a  +equal+ b + C+Sign+jump
    return contenido
 
-i=int(input("1 para ingresar otra derivada,2 para integral y 3 para salir : "))
+i=int(input("1 add a derivative,2 add an integral y 3 EXIT : "))
 
 while i !=3:
 	if i==1:
 		content=content + derivacion()
 	elif i==2:
 		content=content + integracion()
-	print('1 para  derivar')
-	print('2 para integral')
-	i=int(input("2 para integral y 3 para salir : "))
+	print('1 add a derivative')
+	print('2 add an integral')
+	i=int(input("3 EXIT : "))
 	print(content)
   
 	   
 
 content = content + footer
 
-print(content)
-with open(nombretex,'w') as f:
+#print(content)
+with open(nametex,'w') as f:
         f.write(content)
 
-commandLine = subprocess.Popen(['pdflatex', nombretex])
+commandLine = subprocess.Popen(['pdflatex', nametex])
 commandLine.communicate()
-os.unlink(nombreaux)
-os.unlink(nombrelog)
-os.unkink(nombretex)
+os.unlink(nameaux)
+os.unlink(namelog)
+os.unkink(nametex)
