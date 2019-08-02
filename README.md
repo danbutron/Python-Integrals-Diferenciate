@@ -1,5 +1,7 @@
 # Python-Integrals-Diferenciate
 Implementation of Sympy and Latex to solve Integrals and Derivates coding on python
+
+suggestions to dan.butron@gmail.com
 # steps to run the code
 
 1.- install latex miktex
