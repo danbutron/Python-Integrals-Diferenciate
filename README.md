@@ -14,7 +14,9 @@ pip install sympy
 
 5.-for the input functions use the sympy notation
 
+
 for example :
+
     for the nth power
         x**(n)
     for euler nth power
