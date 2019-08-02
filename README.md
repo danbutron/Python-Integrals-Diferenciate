@@ -1,6 +1,7 @@
 # Python-Integrals-Diferenciate
 Implementation of Sympy and Latex to solve Integrals and Derivates coding on python
-#steps to run the code
+# steps to run the code
+
 1.- install latex miktex
 https://miktex.org/
 
@@ -16,5 +17,4 @@ for example :
         x**(n)
     for euler nth power
         exp(n)
-    for 
 
